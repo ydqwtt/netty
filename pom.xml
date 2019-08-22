@@ -361,6 +361,7 @@
     <module>testsuite-native-image</module>
     <module>microbench</module>
     <module>bom</module>
+    <module>netty-study</module>
   </modules>
 
   <dependencyManagement>
@@ -689,6 +690,18 @@
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <scope>test</scope>
+    </dependency>
+      <dependency>
+          <groupId>io.netty</groupId>
+          <artifactId>netty-transport</artifactId>
+          <version>5.0.0.Final-SNAPSHOT</version>
+          <scope>compile</scope>
+      </dependency>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-transport</artifactId>
+      <version>5.0.0.Final-SNAPSHOT</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 
