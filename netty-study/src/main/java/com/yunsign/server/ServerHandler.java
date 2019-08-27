@@ -14,7 +14,6 @@ import java.net.Socket;
  * @Date: 2019-8-22 19:42
  * @Description:
  */
-@Slf4j
 public class ServerHandler implements Runnable {
 
     private Socket socket;
@@ -27,22 +26,28 @@ public class ServerHandler implements Runnable {
         BufferedReader bufferedReader = null;
         PrintWriter printWriter = null;
         try {
+            System.out.println("111");
             bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()) );
+            System.out.println("222");
             printWriter = new PrintWriter(socket.getOutputStream(),true);
+            System.out.println("333");
             String expression;
             String result;
+            System.out.println("444");
             while (true){
+                System.out.println("555"+bufferedReader.readLine());
                 if((expression = bufferedReader.readLine()) == null) {
+                    System.out.println("222");
                     break;
                 }
-                log.info( "接收到的消息={}", expression);
+
+                System.out.println(("接收到的消息=" + expression));
 
                 result = Calculator.cal(expression);
                 System.out.println("result==="+result);
             }
         }catch (Exception e){
             e.printStackTrace();
-            log.error( e.getLocalizedMessage() );
         }finally {
             if(null != bufferedReader){
                 try {

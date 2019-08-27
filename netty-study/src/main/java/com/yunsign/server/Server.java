@@ -11,7 +11,6 @@ import java.net.Socket;
  * @Date: 2019-8-22 19:16
  * @Description:
  */
-@Slf4j
 public class Server {
 
     private static final int port = 7777;
@@ -19,7 +18,7 @@ public class Server {
     private static ServerSocket serverSocket;
 
     public static void start() throws IOException{
-        log.info( "" );
+        System.out.println( "" );
         start(port);
     }
 
@@ -29,14 +28,14 @@ public class Server {
         }
         try{
             serverSocket = new ServerSocket( port );
-            log.info( "服务端已启动，端口："+port );
+            System.out.println(("服务端已启动，端口：" + port));
             while (true){
                 Socket socket = serverSocket.accept();
                 new Thread( new ServerHandler(socket) ).start();
             }
         }finally {
             if(null != serverSocket){
-                log.info( "服务端已关闭" );
+                System.out.println( "服务端已关闭" );
                 serverSocket.close();
                 serverSocket = null;
             }
