@@ -39,10 +39,11 @@
                     // TODO Auto-generated catch block  
                     e.printStackTrace();  
                 }  
-                Set<SelectionKey> selectedKeys = selector.selectedKeys(); // 取得所有已就緒事件的key集合  
+                Set<SelectionKey> selectedKeys = selector.selectedKeys(); // 取得所有已就緒事件的key集合
+
                 Iterator<SelectionKey> it = selectedKeys.iterator();  
                 while (it.hasNext()) {  
-                    dispatch((it.next())); // 根據事件的key進行調度
+                    dispatch(it.next()); // 根據事件的key進行調度
                     it.remove();  
                 }  
             }  

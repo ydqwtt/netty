@@ -67,12 +67,7 @@
                 state = 1; // 改變狀態  
                 sk.interestOps(SelectionKey.OP_WRITE); // 通過key改變通道註冊的事件  
                 sk.selector().wakeup(); // 使一個阻塞住的selector操作立即返回
-                try {
-                    Thread.sleep(10000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }  
+            }
         }  
       
         private void send() throws IOException  {  
@@ -88,7 +83,7 @@
               
             state = 0; // 改變狀態  
             sk.interestOps(SelectionKey.OP_READ); // 通過key改變通道註冊的事件  
-            sk.selector().wakeup(); // 使一個阻塞住的selector操作立即返回  
+            sk.selector().wakeup(); // 使一個阻塞住的selector操作立即返回
         }  
           
         void process(String str) {  
