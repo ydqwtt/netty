@@ -84,19 +84,13 @@
             state = 0; // 改變狀態  
             sk.interestOps(SelectionKey.OP_READ); // 通過key改變通道註冊的事件  
             sk.selector().wakeup(); // 使一個阻塞住的selector操作立即返回
-
-            try {
-                Thread.sleep(30000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         }  
           
         void process(String str) {  
             // do process(decode, logically process, encode)..
             // ..
             try {
-                Thread.sleep(2000);
+                Thread.sleep(20000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
