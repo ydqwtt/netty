@@ -51,7 +51,7 @@ public class HttpConnectionManager {
      * @throws KeyManagementException
      */
     private static SSLContext createIgnoreVerifySSL() throws NoSuchAlgorithmException, KeyManagementException {
-        SSLContext sc = SSLContext.getInstance("TLSv1.2");//SSLv3 TLSv1.2 TLSv1
+        SSLContext sc = SSLContext.getInstance("TLSv1.2");//SSLv3 TLSv1.2 TLS
         // 实现一个X509TrustManager接口，用于绕过验证，不用修改里面的方法
         X509TrustManager trustManager = new X509TrustManager() {
             @Override
