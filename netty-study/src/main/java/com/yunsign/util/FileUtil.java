@@ -1,5 +1,7 @@
 package com.yunsign.util;
 
+import com.yunsign.reactor.HttpUtil;
+
 import java.io.*;
 
 public class FileUtil {

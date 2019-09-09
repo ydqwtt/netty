@@ -62,7 +62,7 @@
             String str = new String(arr); // 將讀取到的byte內容轉為字符串型態  
             if ((str != null) && !str.equals(" ")) {  
                 process(str); // 邏輯處理
-                System.out.println(sc.socket().getRemoteSocketAddress().toString()  
+                System.out.println(sc.socket().getRemoteSocketAddress().toString()
                         + " > " + str);  
                 state = 1; // 改變狀態  
                 sk.interestOps(SelectionKey.OP_WRITE); // 通過key改變通道註冊的事件  
@@ -84,6 +84,12 @@
             state = 0; // 改變狀態  
             sk.interestOps(SelectionKey.OP_READ); // 通過key改變通道註冊的事件  
             sk.selector().wakeup(); // 使一個阻塞住的selector操作立即返回
+
+            try {
+                Thread.sleep(30000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }  
           
         void process(String str) {  
